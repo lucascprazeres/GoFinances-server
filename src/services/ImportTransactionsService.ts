@@ -7,8 +7,6 @@ import Transaction from '../models/Transaction';
 import TransactionRepository from '../repositories/TransactionsRepository';
 import Category from '../models/Category';
 
-import CreateTransactionService from './CreateTransactionService';
-
 interface Request {
   filePath: string;
 }
@@ -82,17 +80,13 @@ class ImportTransactionsService {
 
     const finalCategories = [...newCategories, ...existentCategories];
 
-    console.log(finalCategories, transactions);
-
     const createdTransactions = transactionsRepository.create(
       transactions.map(transaction => ({
         title: transaction.title,
         type: transaction.type,
         value: transaction.value,
-        category: String(
-          finalCategories.find(
-            category => category.title === transaction.category,
-          ),
+        category: finalCategories.find(
+          category => category.title === transaction.category,
         ),
       })),
     );
