@@ -99,6 +99,9 @@ git push origin <sua-branch>
 
 <em>obs: É preciso ter o postgres instalado e configurado e inserir os dados de configuração no arquivo <strong>ormconfig.json</strong></em>
 
+<h2>📝 Licença</h2>
+<p>Esse projeto se encontra sob a licença <strong>MIT</strong>. Para mais informações, acesse o arquivo <strong>LICENSE</strong>.</p>
+
 <hr>
 
 <p align=center>
